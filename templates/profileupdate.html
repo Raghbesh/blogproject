@@ -1,0 +1,12 @@
+{% load static %}
+
+
+
+	<h2>Update</h2>
+	<form method="post" enctype="multipart/form-data">  <!-- Pic upload garana lai enctype ani vitra ko ab kura dinu parxa     -->
+		{% csrf_token %}  <!-- YAsle encrypted form ma data pathau xa    -->
+		{{form.as_p}}   <!-- KAsto type ko dekhnu xa ustai type ko aauxa like p vaneko paragraph ma aauxa ani table gate tabbular form maa aauxa ul garda paragraph ma aauxa tra dotted form ma --> 
+		<button style="color: blue">Update</button>
+
+	</form>
+

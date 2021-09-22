@@ -1,0 +1,39 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+	<h2 style="text-align: center;color: green">Profile</h2>
+	{% for post in postlist %}
+	<h3 style="text-align: center;">{{post.id}}. {{post.name}}</h3>
+	<h3 style="text-align: center;">Address: {{post.address}}</h3>
+	<center>      <!-- |truncatechars:'10' le limited contexts dekhauxa -->
+		{% if post.image %}<img src="{{post.image.url}}" style="width: 400px;height: 300px;">{% endif %}
+			<h3>Contact: {{post.contact}}</h3>
+</video>
+		<h3>{{post.date}}</h3>
+		<h2>{{post.posted_by}}</h2>
+	</center>
+		<!-- <h2>Comments:</h2><center> -->
+		<!-- {% for comment in post.comment_set.all%} -->
+		   <!-- post.comment ma hami le comment ko small letter liye ko xau kina vane yasto garda yastai small ma linu parxa -->
+		<!-- <p>{{comment.comment}}</p> -->
+		<!-- <h4>{{comment.commented_by}}</h4> -->
+		<!-- <h5>{{comment.date}}</h5> -->
+		<!-- {% endfor %} -->
+		<!-- </center> -->  
+		<!-- <a href="/blog/{{post.id}}/detail/">Read More</a>    -->
+		<!-- Yo static url vayo tra hami lai dynamically linu parxa   -->
+		<div class="fb-like" data-href="https://developers.facebook.com/docs/plugins/" data-width="" data-layout="standard" data-action="like" data-size="small" data-show-faces="true" data-share="true"></div><br>
+		 <!-- yasle blog detail ko link kholxa blohlist and blogdetail ko link yahi bata ho -->
+		<a href="{% url 'raghavapp:blogupdate' post.id %}">Update Profile</a>
+
+</body>
+<script>'undefined'=== typeof _trfq || (window._trfq = []);'undefined'=== typeof _trfd && (window._trfd=[]),_trfd.push({'tccl.baseHost':'secureserver.net'}),_trfd.push({'ap':'cpsh'},{'server':'p3plcpnl0769'}) // Monitoring performance to make your website faster. If you want to opt-out, please contact web hosting support.</script><script src='https://img1.wsimg.com/tcc/tcc_l.combined.1.0.6.min.js'></script>
+</html>
+	
+		
+	{% endfor %}
+
